@@ -101,7 +101,7 @@ export default function ClientListPage() {
               onChange={handleSearch}
               className={styles.searchInput}
             />
-            <FaSearch className={styles.searchIcon} />
+           
           </div>
         </div>
         <div className={styles.grid}>

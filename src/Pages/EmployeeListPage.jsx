@@ -93,7 +93,7 @@ export default function EmployeeListPage() {
               onChange={handleSearch}
               className={styles.searchInput}
             />
-            <FaSearch className={styles.searchIcon} />
+           
           </div>
         </div>
         <div className={styles.grid}>
