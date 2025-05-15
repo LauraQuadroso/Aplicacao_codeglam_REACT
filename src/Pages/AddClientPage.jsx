@@ -1,9 +1,17 @@
+// AddClientPage.js
 import React from 'react';
-import styles from './EditEmployeePage.module.css';
+import styles from './AddClientPage.module.css';
 import Sidebar from '../components/Sidebar';
 import { FaCamera } from 'react-icons/fa';
 
-export default function EditClientPage() {
+export default function AddClientPage() {
+  // Função para gerar um ID automático com 6 caracteres
+  const generateId = () => {
+    return Math.random().toString(36).substring(2, 8);
+  };
+
+  const newClientId = generateId();
+
   return (
     <div className={styles.page}>
       <Sidebar />
@@ -14,7 +22,7 @@ export default function EditClientPage() {
         <div className={styles.formContainer}>
           <div className={styles.avatarSection}>
             <img
-              src="https://randomuser.me/api/portraits/women/45.jpg"
+              src="https://media.lordicon.com/icons/wired/gradient/21-avatar.gif" // Imagem padrão
               alt="Avatar"
               className={styles.avatar}
             />
@@ -48,21 +56,20 @@ export default function EditClientPage() {
 
             <div className={styles.row}>
               <div>
-                <label htmlFor="employeeId">ID do Cliente</label>
-                <input id="employeeId" type="text" placeholder="12345" />
+                <label htmlFor="clientId">ID do Cliente</label>
+                <input id="clientId" type="text" value={newClientId} readOnly />
               </div>
               <div>
-                <label htmlFor="startDate">cliente desde  </label>
+                <label htmlFor="startDate">Cliente desde</label>
                 <input id="startDate" type="date" />
               </div>
               <div>
-                <label htmlFor="favorites">Fovoritos</label>
-                <input id="position" type="text" placeholder="Ex: Designer de Unhas" />
+                <label htmlFor="favorites">Favoritos</label>
+                <input id="favorites" type="text" placeholder="Ex: Design de Unhas" />
               </div>
             </div>
 
             <div className={styles.row}>
-        
               <div>
                 <label htmlFor="healthIssues">Problemas de saúde</label>
                 <input
@@ -82,24 +89,22 @@ export default function EditClientPage() {
                   placeholder="Prefere vir de manhã"
                 />
               </div>
-              <div> 
+              <div>
                 <label htmlFor="tel">Telefone</label>
                 <input
                   id="tel"
                   type="text"
-                  placeholder="(XX) XXXXX-XXXX" 
+                  placeholder="(XX) XXXXX-XXXX"
                 />
               </div>
-
-              <div> 
-                <label htmlFor="Email">Email</label>
+              <div>
+                <label htmlFor="email">Email</label>
                 <input
                   id="email"
                   type="text"
-                  placeholder="juliana@gmail.com" 
+                  placeholder="juliana@gmail.com"
                 />
               </div>
-
             </div>
 
             <div className={styles.buttonGroup}>

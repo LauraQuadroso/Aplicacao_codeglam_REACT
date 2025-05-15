@@ -48,10 +48,16 @@
     border: 3px solid #b388eb;
   }
   
-  
-  .cameraIcon{
-    color:#9b5de5
+  .cameraIcon {
+    color: #9b5de5;
+    font-size: 1.5em; /* Aumentando um pouco o tamanho do ícone */
+    cursor: pointer; /* Indica que é clicável */
   }
+  
+  .cameraIcon input[type="file"] {
+    display: none; /* Esconde o input de arquivo padrão */
+  }
+  
   .form {
     display: flex;
     flex-direction: column;
@@ -75,6 +81,7 @@
     font-weight: 600;
     margin-bottom: 6px;
     color: #333;
+    display: block; /* Garante que a label ocupe a largura total do seu container */
   }
   
   input[type="text"],
@@ -85,6 +92,8 @@
     font-size: 14px;
     background-color: #fafafa;
     transition: border-color 0.3s ease;
+    width: 100%; /* Garante que o input ocupe a largura total do seu container */
+    box-sizing: border-box; /* Impede que o padding aumente a largura total */
   }
   
   input:focus {
@@ -122,11 +131,12 @@
     background-color: #c084fc;
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 20px; /* Aumentando um pouco o padding para melhor visualização */
     border-radius: 12px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
+    font-size: 16px; /* Aumentando um pouco a fonte */
   }
   
   .cancelBtn {
@@ -134,11 +144,10 @@
     color: #333;
   }
   
-  .saveBtn {
-    background-color: #c084fc;
-    color: white;
+  .saveBtn:hover {
+    background-color: #a855f7; /* Um tom um pouco mais escuro para o hover */
   }
   
-  .saveBtn :hover{
-    background-color: gray;
+  .cancelBtn:hover {
+    background-color: #ccc;
   }

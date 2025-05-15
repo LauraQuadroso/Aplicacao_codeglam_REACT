@@ -1,17 +1,22 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import styles from './App.module.css';
-import { Navigate } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar';
 import TopCards from './components/TopCards';
 import ChartArea from './components/ChartArea';
 import BirthdayList from './components/BirthdayList';
+
+
 import ClientPage from './pages/ClientPage';
-import EditClientPage from './pages/EditClientPage';
+import ClientListPage from './Pages/ClientListPage';
+import EditClientPage from './Pages/EditClientPage';
+import AddClientPage from './Pages/AddClientPage';
+
 import SchedulePage from './pages/SchedulePage';
 import EmployeePage from './pages/EmployeePage';
-import EditEmployeePage from './pages/EditEmployeePage'; // ✅ Importa a nova página
-import EmployeeListPage from './Pages/EmployeeListPage';
+import EditEmployeePage from './pages/EditEmployeePage';
+import EmployeeListPage from './pages/EmployeeListPage';
+import AddEmployeePage from './Pages/AddEmployeePage';
 
 function Dashboard() {
   return (
@@ -34,23 +39,36 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/cliente/:name" element={<ClientPage />} />
-        <Route path="/cliente/editar" element={<EditClientPage />} />
-        
-        <Route path="/schedule" element={
-          <div className={styles.appContainer}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-              <SchedulePage />
-            </div>
-          </div>
-        } />
 
-        <Route path="/funcionario/:id" element={<EmployeePage />} />
+    
+        {/* AGENDA */}
+        <Route
+          path="/schedule"
+          element={
+            <div className={styles.appContainer}>
+              <Sidebar />
+              <div className={styles.mainContent}>
+                <SchedulePage />
+              </div>
+            </div>
+          }
+        />
+
+        {/* CLIENTES */}
+        <Route path="/cliente/:id" element={<ClientPage />} />
+        <Route path="/clientes" element={<ClientListPage />} />
+        <Route path="/cliente/editar/:id" element={<EditClientPage />} />
+        <Route path="/add-cliente" element={<AddClientPage />} />
+        
+
+        
+
+        {/* FUNCIONÁRIOS */}
         <Route path="/funcionarios" element={<EmployeeListPage />} />
         <Route path="/funcionario" element={<Navigate to="/funcionarios" replace />} />
-
-        <Route path="/funcionario/Editar/:id" element={<EditEmployeePage />} />
+        <Route path="/funcionario/:id" element={<EmployeePage />} />
+        <Route path="/funcionario/editar/:id" element={<EditEmployeePage />} />
+        <Route path="/add-funcionario" element={<AddEmployeePage />} />
       </Routes>
     </BrowserRouter>
   );
