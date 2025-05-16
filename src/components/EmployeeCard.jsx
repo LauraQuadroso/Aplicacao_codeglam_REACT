@@ -1,3 +1,4 @@
+//card de funcionario da pagina de funcionario
 import React from 'react';
 import styles from './EmployeeCard.module.css';
 import { FaBriefcase } from 'react-icons/fa'; 

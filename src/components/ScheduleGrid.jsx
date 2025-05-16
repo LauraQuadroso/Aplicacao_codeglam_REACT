@@ -1,9 +1,11 @@
 // src/components/ScheduleGrid.jsx
+
+//grid do calendario
 import React, { useState } from 'react';
 import styles from './ScheduleGrid.module.css';
 import AppointmentDetails from '../components/AppoinmentDetails';
 import EditAppointmentForm from '../components/EditAppointmentForm';
-import AddAppointmentForm from '../components/AddAppointmentForm';
+
 
 const ScheduleGrid = () => {
   const startTime = 8;

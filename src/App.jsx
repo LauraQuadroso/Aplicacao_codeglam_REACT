@@ -54,7 +54,22 @@ function App() {
               </div>
             </div>
           }
+
+
+
         />
+<Route
+  path="/calendario"
+  element={
+    <div className={styles.appContainer}>
+      <Sidebar /> 
+      <div className={styles.mainContent}>
+        <SchedulePage />
+      </div>
+    </div>
+  }
+/>
+
         <Route path="/cliente/:id" element={<ClientPage />} />
         <Route path="/clientes" element={<ClientListPage />} />
         <Route path="/cliente/editar/:id" element={<EditClientPage />} />

@@ -9,8 +9,8 @@ import { useNavigate } from 'react-router-dom';
 // Substituir pela API
 const initialServicesData = [
   { _id: '1', titulo: 'Corte de Cabelo Simples', preco: 50.00, comissao: 10, duracao: '30 min', descricao: 'Corte reto ou repicado.', status: 'A' },
-  { _id: '2', titulo: 'Manicure', preco: 35.00, comissao: 15, duracao: '45 min', descricao: 'Cuidado e esmaltação das unhas.', status: 'A' },
-  { _id: '3', titulo: 'Pedicure', preco: 40.00, comissao: 15, duracao: '60 min', descricao: 'Cuidado e esmaltação dos pés.', status: 'A' },
+  { _id: '2', titulo: 'Manicure', preco: 35.00, comissao: 15, duracao: '45 min', descricao: 'Cuidado e esmaltação das unhas.', status: 'B' },
+  { _id: '3', titulo: 'Pedicure', preco: 40.00, comissao: 15, duracao: '60 min', descricao: 'Cuidado e esmaltação dos pés.', status: 'C' },
   { _id: '4', titulo: 'Unhas em Gel', preco: 120.00, comissao: 20, duracao: '2 horas', descricao: 'Aplicação de unhas de gel.', status: 'A' },
   { _id: '5', titulo: 'Sobrancelha', preco: 25.00, comissao: 10, duracao: '20 min', descricao: 'Design de sobrancelha.', status: 'A' },
   { _id: '6', titulo: 'Depilação', preco: 60.00, comissao: 15, duracao: '1 hora', descricao: 'Depilação com cera.', status: 'A' },
@@ -27,7 +27,7 @@ const initialServicesData = [
   { _id: '17', titulo: 'Limpeza de Pele', preco: 130.00, comissao: 20, duracao: '1h30', descricao: 'Limpeza profunda com extração.', status: 'A' },
   { _id: '18', titulo: 'Design de Barba', preco: 30.00, comissao: 10, duracao: '30 min', descricao: 'Barbearia com acabamento detalhado.', status: 'A' },
   { _id: '19', titulo: 'Massagem Relaxante', preco: 100.00, comissao: 25, duracao: '1h', descricao: 'Massagem terapêutica relaxante.', status: 'A' },
-  { _id: '20', titulo: 'Banho de Lua', preco: 85.00, comissao: 15, duracao: '1h', descricao: 'Clareamento dos pelos do corpo.', status: 'A' },
+  { _id: '20', titulo: 'Banho de Lua', preco: 85.00, comissao: 15, duracao: '1h', descricao: 'Clareamento dos pelos do corpo.', status: 'C' },
 ];
 
 

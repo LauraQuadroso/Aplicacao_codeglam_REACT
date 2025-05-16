@@ -1,4 +1,4 @@
-
+//cards da pagina serviço
 import React from 'react';
 import styles from './ServiceCard.module.css';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +16,6 @@ export default function ServiceCard({ service }) {
       <p className={styles.price}>Preço: R$ {service.preco.toFixed(2)}</p>
       <p className={styles.commission}>Comissão: {service.comissao}%</p>
       <p className={styles.duration}>Duração: {service.duracao}</p>
-      <p className={styles.description}>{service.descricao.substring(0, 50)}...</p> {/* Exibe uma breve descrição */}
       <p className={styles.status}>Status: {service.status === 'A' ? 'Ativo' : service.status === 'B' ? 'Bloqueado' : 'Cancelado'}</p>
     </div>
   );

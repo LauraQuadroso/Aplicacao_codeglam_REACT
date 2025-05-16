@@ -19,7 +19,7 @@ const SidebarContext = createContext();
 
 const menuItems = [
   { icon: <FaHome />, label: 'Home', to: '/' },
-  { icon: <FaCalendarAlt />, label: 'Agenda', to: '/schedule' },
+  { icon: <FaCalendarAlt />, label: 'Agenda', to: '/calendario' },
   { icon: <FaStar />, label: 'Serviços', to: '/servicos' },
   { icon: <FaUsers />, label: 'Clientes', to: '/clientes' },
   { icon: <FaUserTie />, label: 'Funcionários', to: '/funcionarios'},
