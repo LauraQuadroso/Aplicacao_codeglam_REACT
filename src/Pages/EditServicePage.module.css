@@ -1,0 +1,137 @@
+.page {
+  display: flex;
+  min-height: 100vh; /* Garante que a página ocupe pelo menos a altura da tela */
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; /* Evita barras de rolagem indesejadas na página */
+}
+
+.mainArea {
+  flex: 1; /* Ocupa o espaço após a Sidebar */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.topBar {
+  height: 24px;
+  background-color: #9b5de5;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;  /* centraliza horizontal */
+  align-items: flex-start;  /* alinha no topo */
+  padding: 60px 20px 20px;  /* dá um padding maior em cima pra empurrar pra baixo */
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.form {
+  background-color: white;
+  margin: 0 auto; /* Centraliza o formulário horizontalmente */
+  padding: 30px;
+  border-radius: 15px;
+  width: 95%;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas para campos alinhados no topo */
+  gap: 20px;
+}
+
+.form label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #495057;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="email"],
+.form select,
+.form textarea {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Faz o textarea ocupar toda a largura, última linha do grid */
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.form textarea {
+  min-height: 140px; /* Maior altura para o textarea */
+  resize: vertical;
+}
+
+/* Botões na linha de baixo ocupando toda largura */
+.buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.buttons button {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1em;
+}
+
+.buttons .cancelBtn {
+  background-color: #e0e0e0;
+  color: #495057;
+}
+
+.buttons .cancelBtn:hover {
+  background-color: #c9c9c9;
+  color: #343a40;
+}
+
+.buttons .saveBtn {
+  background-color: #9b5de5;
+  color: white;
+}
+
+.buttons .saveBtn:hover {
+  background-color: #824bc4;
+}
+
+.error {
+  color: #dc3545;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.loading {
+  padding: 40px;
+  font-size: 1.2em;
+  text-align: center;
+  color: #6c757d;
+}

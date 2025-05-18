@@ -5,6 +5,9 @@ export default function StaffPermissions() {
   const staff = [
     { nome: "Bruna", role: "Esteticista" },
     { nome: "Carlos", role: "Cabeleireiro" },
+    { nome: "Ana", role: "Cabeleireiro" },
+    { nome: "Natasha", role: "Manicure" },
+
   ];
 
   return (

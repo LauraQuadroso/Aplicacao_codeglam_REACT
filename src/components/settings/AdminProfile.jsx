@@ -7,6 +7,7 @@ export default function AdminProfile() {
     email: "",
     senha: ""
   });
+  const [saved, setSaved] = useState(false);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,6 +15,8 @@ export default function AdminProfile() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Perfil do ADM:", form);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 3000);
   };
 
   return (
@@ -23,7 +26,9 @@ export default function AdminProfile() {
         <input name="nome" placeholder="Nome completo" value={form.nome} onChange={handleChange} />
         <input name="email" placeholder="Email" value={form.email} onChange={handleChange} />
         <input name="senha" placeholder="Nova senha" type="password" value={form.senha} onChange={handleChange} />
-        <button className={styles.salvar} type="submit">Atualizar</button>
+        <button className={styles.salvar} type="submit" disabled={saved}>
+          {saved ? "Atualizado" : "Atualizar"}
+        </button>
       </form>
     </section>
   );

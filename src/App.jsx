@@ -15,7 +15,10 @@ import AddEmployeePage from './pages/AddEmployeePage';
 
 import ServiceListPage from './pages/ServiceListPage';
 import AddServicePage from './pages/AddServicePage';
-import ServiceDetailsPage from './pages/ServiceDetailsPage';
+import ServiceDetailsPage from './Pages/ServiceDetailsPage';
+import EditServicePage from './pages/EditServicePage';
+
+
 import TopCards from './components/TopCards';
 import ChartArea from './components/ChartArea';
 import BirthdayList from './components/BirthdayList';
@@ -90,6 +93,9 @@ function App() {
         <Route path="/servicos" element={<ServiceListPage />} />
         <Route path="/add-servico" element={<AddServicePage />} />
         <Route path="/servico/:id" element={<ServiceDetailsPage />} />
+            <Route path="/servicos/editar/:id" element={<EditServicePage />} />
+       
+        
       </Routes>
 
 

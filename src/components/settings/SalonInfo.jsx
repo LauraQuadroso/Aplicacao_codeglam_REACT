@@ -8,6 +8,7 @@ export default function SalonInfo() {
     email: "",
     endereco: ""
   });
+  const [saved, setSaved] = useState(false);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -15,6 +16,8 @@ export default function SalonInfo() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Dados do salão:", form);
+    setSaved(true);
+    setTimeout(() => setSaved(false), 3000);
   };
 
   return (
@@ -25,7 +28,9 @@ export default function SalonInfo() {
         <input name="telefone" placeholder="Telefone" value={form.telefone} onChange={handleChange} />
         <input name="email" placeholder="Email" value={form.email} onChange={handleChange} />
         <input name="endereco" placeholder="Endereço" value={form.endereco} onChange={handleChange} />
-        <button className={styles.salvar} type="submit">Salvar</button>
+        <button className={styles.salvar} type="submit" disabled={saved}>
+          {saved ? "Salvo" : "Salvar"}
+        </button>
       </form>
     </section>
   );

@@ -1,4 +1,3 @@
-// pages/ServiceDetailsPage.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
@@ -47,6 +46,10 @@ export default function ServiceDetailsPage() {
     navigate('/servicos');
   };
 
+  const handleEditService = () => {
+    navigate(`/servicos/editar/${id}`); // Redireciona para a página de edição
+  };
+
   const formatStatus = (status) => {
     switch (status) {
       case 'A': return 'Ativo';
@@ -65,50 +68,55 @@ export default function ServiceDetailsPage() {
   return (
     <div className={styles.page}>
       <Sidebar />
-      <div className={styles.topBar}></div>
-      <div className={styles.content}>
-        {loading ? (
-          <div className={styles.loading}>Carregando detalhes do serviço...</div>
-        ) : error ? (
-          <>
-            <div className={styles.error}>{error}</div>
-            <button onClick={handleGoBack} className={styles.backButton}>
-              Voltar para Serviços
-            </button>
-          </>
-        ) : service ? (
-          <div className={styles.detailsContainer}>
-            <h2 className={styles.title}>{service.titulo}</h2>
-            <p className={styles.id}>ID: {service._id}</p>
+      <div className={styles.mainArea}>
+        <div className={styles.topBar}></div>
+        <div className={styles.content}>
+          {loading ? (
+            <div className={styles.loading}>Carregando detalhes do serviço...</div>
+          ) : error ? (
+            <>
+              <div className={styles.error}>{error}</div>
+              <button onClick={handleGoBack} className={styles.backButton}>
+                Voltar para Serviços
+              </button>
+            </>
+          ) : service ? (
+            <div className={styles.detailsContainer}>
+              <h2 className={styles.title}>{service.titulo}</h2>
+              <p className={styles.id}>ID: {service._id}</p>
 
-            <div className={styles.infoSection}>
-              <p className={styles.price}>Preço: {formatCurrency(service.preco)}</p>
-              <p className={styles.commission}>Comissão: {service.comissao}%</p>
-              <p className={styles.duration}>Duração: {service.duracao}</p>
-              <p className={styles.recorrencia}>Recorrência: {service.recorrencia} dias</p>
-              <p className={styles.status}>Status: {formatStatus(service.status)}</p>
-              <p className={styles.dataCadastro}>Cadastrado em: {formatDate(service.dataCadastro)}</p>
+              <div className={styles.infoSection}>
+                <p className={styles.price}>Preço: {formatCurrency(service.preco)}</p>
+                <p className={styles.commission}>Comissão: {service.comissao}%</p>
+                <p className={styles.duration}>Duração: {service.duracao}</p>
+                <p className={styles.recorrencia}>Recorrência: {service.recorrencia} dias</p>
+                <p className={styles.status}>Status: {formatStatus(service.status)}</p>
+                <p className={styles.dataCadastro}>Cadastrado em: {formatDate(service.dataCadastro)}</p>
+              </div>
+
+              <div className={styles.descriptionSection}>
+                <h3>Descrição:</h3>
+                <p className={styles.descriptionText}>{service.descricao}</p>
+              </div>
+
+              <div className={styles.actionButtons}>
+                <button onClick={handleGoBack} className={styles.backButton}>
+                  Voltar 
+                </button>
+                <button onClick={handleEditService} className={styles.editButton}>
+                  Editar 
+                </button>
+              </div>
             </div>
-
-            <div className={styles.descriptionSection}>
-              <h3>Descrição:</h3>
-              <p className={styles.descriptionText}>{service.descricao}</p>
-            </div>
-
-            <div className={styles.actionButtons}>
+          ) : (
+            <div className={styles.notFound}>
+              Serviço não encontrado.
               <button onClick={handleGoBack} className={styles.backButton}>
                 Voltar para Serviços
               </button>
             </div>
-          </div>
-        ) : (
-          <div className={styles.notFound}>
-            Serviço não encontrado.
-            <button onClick={handleGoBack} className={styles.backButton}>
-              Voltar para Serviços
-            </button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
