@@ -18,13 +18,12 @@ import AddServicePage from './pages/AddServicePage';
 import ServiceDetailsPage from './Pages/ServiceDetailsPage';
 import EditServicePage from './pages/EditServicePage';
 
-
 import TopCards from './components/TopCards';
 import ChartArea from './components/ChartArea';
 import BirthdayList from './components/BirthdayList';
 
-
 import SettingsPage from './Pages/SettingsPage';
+import AllAppointmentsHistoryPage from './pages/AllAppointmentsHistoryPage';
 
 function Dashboard() {
   return (
@@ -57,27 +56,22 @@ function App() {
               </div>
             </div>
           }
-
-
-
         />
-<Route
-  path="/calendario"
-  element={
-    <div className={styles.appContainer}>
-      <Sidebar /> 
-      <div className={styles.mainContent}>
-        <SchedulePage />
-      </div>
-    </div>
-  }
-/>
-
+        <Route
+          path="/calendario"
+          element={
+            <div className={styles.appContainer}>
+              <Sidebar />
+              <div className={styles.mainContent}>
+                <SchedulePage />
+              </div>
+            </div>
+          }
+        />
         <Route path="/cliente/:id" element={<ClientPage />} />
         <Route path="/clientes" element={<ClientListPage />} />
         <Route path="/cliente/editar/:id" element={<EditClientPage />} />
         <Route path="/add-cliente" element={<AddClientPage />} />
-
 
         <Route path="/funcionarios" element={<EmployeeListPage />} />
         <Route path="/funcionario" element={<Navigate to="/funcionarios" replace />} />
@@ -85,21 +79,18 @@ function App() {
         <Route path="/funcionario/editar/:id" element={<EditEmployeePage />} />
         <Route path="/add-funcionario" element={<AddEmployeePage />} />
 
-
         <Route path="/configuracoes" element={<SettingsPage />} />
-
-
 
         <Route path="/servicos" element={<ServiceListPage />} />
         <Route path="/add-servico" element={<AddServicePage />} />
         <Route path="/servico/:id" element={<ServiceDetailsPage />} />
-            <Route path="/servicos/editar/:id" element={<EditServicePage />} />
-       
-        
+        <Route path="/servicos/editar/:id" element={<EditServicePage />} />
+
+  
+
+<Route path="/historico" element={<AllAppointmentsHistoryPage />} />
+
       </Routes>
-
-
-
     </BrowserRouter>
   );
 }

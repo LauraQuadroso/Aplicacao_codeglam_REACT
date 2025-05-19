@@ -12,6 +12,7 @@ import {
   FaTags,
   FaComments,
   FaCog,
+  FaHistory,
   FaHome
 } from 'react-icons/fa';
 
@@ -22,7 +23,8 @@ const menuItems = [
   { icon: <FaCalendarAlt />, label: 'Agenda', to: '/calendario' },
   { icon: <FaStar />, label: 'Serviços', to: '/servicos' },
   { icon: <FaUsers />, label: 'Clientes', to: '/clientes' },
-  { icon: <FaUserTie />, label: 'Funcionários', to: '/funcionarios'},
+  { icon: <FaUserTie />, label: 'Funcionários', to: '/funcionarios' },
+  { icon: <FaHistory />, label: 'Histórico', to: '/historico' },  
   { icon: <FaCog />, label: 'Configurações', to: '/configuracoes' },
 ];
 
